@@ -5,7 +5,7 @@ interface Todo {
    isChecked : boolean, 
     readonly id : string
 }
-
+const paraClass : string = "tittle text-white flex-1 text-xl capitalize font-medium "
 const todos : Todo [] = []
 
 const TodoContainer = document.querySelector(".todoContainer") as HTMLDListElement
@@ -38,6 +38,7 @@ const renderTodos = (todos : Todo[]):void => {
 
 }
 
+
 const generatedTodo = (id:string , isChecked : boolean, tittle: string):void => {
   const todo: HTMLDivElement = document.createElement("div");
   todo.className = "w-[500px] bg-green-300 px-4 py-3 flex items-center justify-between rounded-md mt-3 shadow-md hover:shadow-lg transition-shadow mt-5";  // Added shadow for better effect
@@ -48,12 +49,17 @@ const generatedTodo = (id:string , isChecked : boolean, tittle: string):void => 
   checkbox.className = "checkbox-style mr-3";  // Custom class for checkbox styling
   checkbox.checked = isChecked;
   checkbox.onchange = () => {
-     paragraph.className = checkbox.checked ? "line-through" : ""
+    todos.find((item) => {
+      if(item.id === id){
+        item.isChecked = checkbox.checked
+      }
+    })
+    paragraph.className = checkbox.checked ? `line-through ${paraClass}` : paraClass;
   }
   
   // Creating paragraph for the title
   const paragraph: HTMLParagraphElement = document.createElement("p");
-  paragraph.className = checkbox.checked ? 'tittle text-white flex-1 text-xl capitalize font-medium' : "";  // Larger text, bold font
+  paragraph.className = checkbox.checked ? `line-through ${paraClass}` : paraClass;  // Larger text, bold font
   paragraph.innerText = tittle;
   
   // Creating the delete button
