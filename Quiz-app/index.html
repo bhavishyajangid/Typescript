@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body class="bg-[#8A2BE2] flex justify-center items-center mt-12">
+
+    <div class="container min-h-[350px] w-[500px] bg-white p-2 rounded-md">
+        <div class="header h-10 w-full px-4 flex justify-between items-center border-b border-black text-xl font-semibold text-[#070547]">
+            <p>Simple Quiz</p>
+            <p>Score: <span id="score"></span></p>
+        </div>
+
+        <div class="Question-div h-[95%] w-full p-3" >
+            <!-- <span class="text-base" id="questionNumber"></span> -->
+            <p class="text-lg font-normal text-[#070547] ml-2" id="question">. </p>
+           
+            <div id="optionContainer">
+
+            </div>
+            
+
+            <div class="buttons h-12 w-full mt-3 flex justify-evenly items-center">
+                <button id="previous" class="prev-btn bg-[#8A2BE2]  h-10 w-[150px] text-base  font-medium text-white bg-blueviolet border-none rounded-md cursor-pointer">
+                    Previous
+                </button>
+                <button id="next" class="next-btn bg-[#8A2BE2] h-10 w-[150px] text-base  font-medium text-white bg-blueviolet border-none rounded-md cursor-pointer">
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
