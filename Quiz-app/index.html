@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
-  <body class="bg-[#8A2BE2] flex justify-center items-center mt-12">
+  <body class="bg-[#8A2BE2] flex flex-col  justify-center items-center mt-12">
 
     <div class="container min-h-[350px] w-[500px] bg-white p-2 rounded-md">
         <div class="header h-10 w-full px-4 flex justify-between items-center border-b border-black text-xl font-semibold text-[#070547]">
@@ -32,7 +32,23 @@
                 </button>
             </div>
         </div>
-    </div>
+      </div>
+
+      <div class="w-96 h-40 flex gap-3 flex-col mt-10">
+        <div class="flex gap-3 items-center ">
+          <span class="w-4 h-4 rounded-sm inline-block bg-green-500 border border-solid border-black"></span>
+          <p class="capitalize text-white text-sm">Correct Option </p>
+        </div>
+        <div class="flex gap-3 items-center ">
+          <span class="w-4 h-4 rounded-sm inline-block bg-red-500 border border-solid border-black"></span>
+          <p class="capitalize text-white text-sm">Wrong Option </p>
+        </div>
+        <div class="flex gap-3 items-center ">
+          <span class="w-4 h-4 rounded-sm inline-block bg-gray-500 border border-solid border-black"></span>
+          <p class="capitalize text-white text-sm">option is selected by you </p>
+        </div>
+      </div>
+
     
     <script type="module" src="/src/main.ts"></script>
   </body>
